@@ -1,0 +1,48 @@
+@use '../../../styles/mixins' as *;
+
+.section {
+  @include section-padding;
+  @include flex(column, flex-start, center);
+  min-height: 100svh;
+  padding-top: calc(var(--section-padding) + 56px);
+}
+
+.inner {
+  @include container;
+  @include flex(column, flex-start, flex-start, var(--space-6));
+  max-width: 720px;
+}
+
+$ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+
+.label {
+  @include mono-label;
+  animation: fade-up 0.65s $ease-out both;
+  animation-delay: 0ms;
+}
+
+.title {
+  margin-top: var(--space-2);
+  animation: fade-up 0.65s $ease-out both;
+  animation-delay: 120ms;
+}
+
+.accent {
+  color: var(--accent);
+}
+
+.tagline {
+  font-size: 1.125rem;
+  color: var(--text-muted);
+  max-width: 540px;
+  animation: fade-up 0.65s $ease-out both;
+  animation-delay: 220ms;
+}
+
+.cta {
+  @include flex(row, center, flex-start, var(--space-3));
+  margin-top: var(--space-2);
+  flex-wrap: wrap;
+  animation: fade-up 0.65s $ease-out both;
+  animation-delay: 350ms;
+}

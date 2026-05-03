@@ -1,0 +1,36 @@
+@use '../../../styles/mixins' as *;
+
+.section {
+  @include section-padding;
+  border-top: 1px solid var(--border);
+}
+
+.inner {
+  @include container;
+  @include flex(column, flex-start, flex-start, var(--space-6));
+  max-width: 600px;
+}
+
+.animate {
+  opacity: 0;
+
+  &.visible {
+    animation: fade-up 0.65s cubic-bezier(0.16, 1, 0.3, 1) both;
+    animation-delay: var(--anim-delay, 0ms);
+  }
+}
+
+.label {
+  @include mono-label;
+}
+
+.text {
+  font-size: 1rem;
+  max-width: 480px;
+}
+
+.links {
+  @include flex(row, center, flex-start, var(--space-3));
+  flex-wrap: wrap;
+  margin-top: var(--space-2);
+}
