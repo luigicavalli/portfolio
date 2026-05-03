@@ -1,0 +1,53 @@
+@use '../../../styles/mixins' as *;
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  border-bottom: 1px solid var(--border);
+  background: rgba(10, 10, 10, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.nav {
+  @include container;
+  @include flex(row, center, space-between);
+  height: 56px;
+}
+
+.logo {
+  font-family: var(--font-mono);
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--text);
+  transition: var(--transition);
+
+  &:hover {
+    color: var(--accent);
+  }
+}
+
+.dot {
+  color: var(--accent);
+}
+
+.links {
+  @include flex(row, center, flex-end, var(--space-6));
+
+  @include responsive(sm) {
+    gap: var(--space-4);
+  }
+}
+
+.link {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  transition: var(--transition);
+
+  &:hover {
+    color: var(--text);
+  }
+}

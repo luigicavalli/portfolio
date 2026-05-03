@@ -1,0 +1,18 @@
+@use '../../../styles/mixins' as *;
+
+.footer {
+  border-top: 1px solid var(--border);
+  padding-block: var(--space-8);
+}
+
+.inner {
+  @include container;
+  @include flex(row, center, center);
+}
+
+.text {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+}

@@ -1,0 +1,39 @@
+@use '../../../styles/mixins' as *;
+
+.section {
+  @include section-padding;
+  border-top: 1px solid var(--border);
+}
+
+.inner {
+  @include container;
+  @include flex(column, flex-start, flex-start, var(--space-12));
+}
+
+.header {
+  @include flex(column, flex-start, flex-start, var(--space-2));
+}
+
+.animate {
+  opacity: 0;
+
+  &.visible {
+    animation: fade-up 0.65s cubic-bezier(0.16, 1, 0.3, 1) both;
+    animation-delay: var(--anim-delay, 0ms);
+  }
+}
+
+.label {
+  @include mono-label;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: var(--space-6);
+  width: 100%;
+
+  @include responsive(sm) {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,62 @@
+@use '../../../styles/mixins' as *;
+
+.animate {
+  opacity: 0;
+
+  &.visible {
+    animation: fade-up 0.65s cubic-bezier(0.16, 1, 0.3, 1) both;
+    animation-delay: var(--anim-delay, 0ms);
+  }
+}
+
+.card {
+  @include flex(column, flex-start, flex-start, var(--space-5));
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-8);
+  transition: border-color var(--transition);
+
+  &:hover {
+    border-color: var(--accent-border);
+  }
+}
+
+.featured {
+  border-color: var(--accent-border);
+  background: linear-gradient(135deg, var(--surface) 0%, rgba(79, 142, 247, 0.04) 100%);
+}
+
+.header {
+  @include flex(row, flex-start, space-between);
+  width: 100%;
+}
+
+.title {
+  font-size: 1.125rem;
+  color: var(--text);
+}
+
+.teamBadge {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--text-muted);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-top: var(--space-1);
+}
+
+.description {
+  font-size: 0.9375rem;
+  flex: 1;
+}
+
+.tags {
+  @include flex(row, center, flex-start, var(--space-2));
+  flex-wrap: wrap;
+}
+
+.actions {
+  @include flex(row, center, flex-start, var(--space-2));
+  flex-wrap: wrap;
+}
