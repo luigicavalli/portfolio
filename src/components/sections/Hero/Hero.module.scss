@@ -5,12 +5,32 @@
   @include flex(column, flex-start, center);
   min-height: 100svh;
   padding-top: calc(var(--section-padding) + 56px);
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+
+    background-image:
+      radial-gradient(ellipse 70% 55% at 72% 28%, rgba(79, 142, 247, 0.07) 0%, transparent 70%),
+      radial-gradient(circle, rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+    background-size: 100% 100%, 28px 28px;
+
+    mask-image: linear-gradient(to bottom, black 55%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 55%, transparent 100%);
+  }
 }
 
 .inner {
   @include container;
   @include flex(column, flex-start, flex-start, var(--space-6));
   max-width: 720px;
+  position: relative;
+  z-index: 1;
 }
 
 $ease-out: cubic-bezier(0.16, 1, 0.3, 1);
