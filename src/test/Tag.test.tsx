@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { describe, it, expect } from 'vitest';
-import { Tag } from './Tag';
+import { Tag } from '../components/ui/Tag/Tag';
 
 describe('Tag', () => {
   it('renders the label text', () => {

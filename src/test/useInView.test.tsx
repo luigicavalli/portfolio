@@ -1,6 +1,6 @@
 import { render, screen, act } from '@testing-library/react';
 import { describe, it, expect, vi, beforeEach } from 'vitest';
-import { useInView } from './useInView';
+import { useInView } from '../hooks/useInView';
 
 function TestBox() {
   const { ref, inView } = useInView<HTMLDivElement>();

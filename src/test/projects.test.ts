@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { projects } from './projects';
+import { projects } from '../data/projects';
 
 describe('projects data', () => {
   it('has at least one project', () => {

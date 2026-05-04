@@ -1,5 +1,6 @@
 import styles                 from './About.module.scss';
-import profileImg             from '../../../assets/hero.png';
+import profileImgWebp         from '../../../assets/hero.webp';
+import profileImgPng          from '../../../assets/hero.png';
 import { useInView }          from '../../../hooks/useInView';
 import type { CSSProperties } from 'react';
 
@@ -52,13 +53,16 @@ export function About() {
           className={`${styles.imageWrapper} ${styles.animate} ${inView ? styles.visible : ''}`}
           style={{ '--anim-delay': '180ms' } as CSSProperties}
         >
-          <img
-            src={profileImg}
-            alt="Luigi Cavalli"
-            className={styles.image}
-            width={280}
-            height={296}
-          />
+          <picture className={styles.picture}>
+            <source srcSet={profileImgWebp} type="image/webp" />
+            <img
+              src={profileImgPng}
+              alt="Luigi Cavalli"
+              className={styles.image}
+              width={280}
+              height={296}
+            />
+          </picture>
         </div>
       </div>
     </section>
