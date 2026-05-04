@@ -20,7 +20,8 @@ export function useActiveSection(ids: string[]) {
     });
 
     return () => observers.forEach((obs) => obs?.disconnect());
-  }, []);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [ids.join(',')]);
 
   return activeId;
 }
