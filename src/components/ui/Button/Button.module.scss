@@ -1,0 +1,31 @@
+@use '../../../styles/mixins' as *;
+
+.button {
+  @include flex(row, center, center, var(--space-2));
+  display: inline-flex;
+  padding: var(--space-3) var(--space-5);
+  border-radius: var(--radius-md);
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: var(--transition);
+  white-space: nowrap;
+}
+
+.primary {
+  background: var(--accent);
+  color: #fff;
+
+  &:hover {
+    background: #6ba0f9;
+  }
+}
+
+.ghost {
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+
+  &:hover {
+    border-color: var(--accent-border);
+    color: var(--text);
+  }
+}
