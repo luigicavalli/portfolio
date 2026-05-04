@@ -20,6 +20,7 @@ export function Hero() {
         <div className={styles.cta}>
           <Button href="#projects">View projects</Button>
           <Button href="#contact" variant="ghost">Get in touch</Button>
+          <Button href="/luigi-cavalli-cv.pdf" variant="ghost" external>Download CV</Button>
         </div>
       </div>
     </section>

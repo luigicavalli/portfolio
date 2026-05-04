@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { describe, it, expect } from 'vitest';
-import { Button } from './Button';
+import { Button } from '../components/ui/Button/Button';
 
 describe('Button', () => {
   it('renders as <button> when no href is provided', () => {

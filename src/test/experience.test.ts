@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { experience } from './experience';
+import { experience } from '../data/experience';
 
 describe('experience data', () => {
   it('has at least one entry', () => {
