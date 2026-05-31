@@ -16,7 +16,7 @@ export const experience: ExperienceItem[] = [
   },
   {
     id: 'develhope',
-    role: 'Full Stack Developer',
+    role: 'Full Stack Developer Bootcamp',
     company: 'Develhope',
     location: 'Remote',
     period: '2024',
